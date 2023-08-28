@@ -5,7 +5,7 @@ import { db } from './config/firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { Add } from './components/add';
 import MovieList from './components/movieList';
-import {FileUpload} from './components/fileupload'
+// import {FileUpload} from './components/fileupload'
 
 function App() {
   const [movieList, setMovieList] = useState([]);
@@ -31,7 +31,7 @@ function App() {
       <Auth />
       <Add />
       <MovieList movieList={movieList}/><br /><br /><br />
-      <FileUpload />
+      {/* <FileUpload /> */}
     </div>
   );
 }

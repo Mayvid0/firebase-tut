@@ -10,8 +10,6 @@ export const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-//   console.log(auth?.currentUser?.email);
-
   const signIn = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
@@ -40,21 +38,37 @@ export const Auth = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col sm:flex-row items-center justify-center mt-10 gap-3 sm:gap-5">
       <input
+        className="border p-2"
         type="email"
         placeholder="Email..."
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
+        className="border p-2"
         type="password"
         placeholder="Password..."
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={signIn}> Sign In </button>
-
-      <button onClick={signInWithGoogle}>Sign-in using Google</button>
-      <button onClick={logout}>LogOut</button>
+      <button
+        className="border-2 border-black bg-green-600 p-2"
+        onClick={signIn}
+      >
+        Sign In
+      </button>
+      <button
+        className="border-2 border-black bg-slate-200 p-2"
+        onClick={signInWithGoogle}
+      >
+        Sign-in using Google
+      </button>
+      <button
+        className="border-2 border-black bg-red-600 border-solid p-2"
+        onClick={logout}
+      >
+        LogOut
+      </button>
     </div>
   );
 };
